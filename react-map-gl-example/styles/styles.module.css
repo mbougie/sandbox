@@ -1,5 +1,5 @@
 /* ----------- index css ------------- */
-/* .container {
+.container {
   display: flex;
   max-width: 1200px;
   height: 100vh;
@@ -40,10 +40,10 @@
 
 .dogImage {
   width: 100%;
-} */
+}
 
 /* ----------- card css ------------- */
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -75,4 +75,4 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-}
+} */

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "@/styles/styles.module.css";
+import styles from "@/styles/dog_list.module.css";
 
 const DogList = ({ breeds }) => {
   const [breedsList, setBreedsList] = useState(breeds);
