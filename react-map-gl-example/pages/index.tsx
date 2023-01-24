@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/styles.module.css";
 
+import Header from "@/components/Header";
+
 // import styles from './styles.module.css';
 
 const Index = () => {
@@ -34,3 +36,14 @@ const Index = () => {
 };
 
 export default Index;
+
+// const Home = () => {
+//   return (
+//     <div>
+//       <Header />
+//       <h1>Welcome to my website!</h1>
+//     </div>
+//   );
+// }
+
+// export default Home;
