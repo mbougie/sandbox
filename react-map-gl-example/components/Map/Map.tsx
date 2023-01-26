@@ -29,6 +29,15 @@ const Map = (props: Props) => {
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
       interactiveLayerIds={[...DRAWN_LAYER_IDS]}
     >
+      {/* <DrawControl
+        displayControlsDefault={false}
+        onCreate={() => {
+          // reset cursor after creation
+          setMapCursor("grab");
+        }}
+        onUpdate={console.log}
+        onDelete={console.log}
+      /> */}
       {props.children}
     </MapGL>
   );

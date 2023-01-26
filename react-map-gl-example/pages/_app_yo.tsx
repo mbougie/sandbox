@@ -18,7 +18,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <div>
-      <header>my app</header>
+      <header>my fffff</header>
       {getLayout(<Component {...pageProps} />)}
     </div>
   );

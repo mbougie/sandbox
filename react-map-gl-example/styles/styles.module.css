@@ -41,38 +41,3 @@
 .dogImage {
   width: 100%;
 }
-
-/* ----------- card css ------------- */
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-}
-
-.title {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  width: 300px;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #f2f2f2;
-  margin: 10px;
-  text-align: center;
-}
-
-.cardTitle {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-} */
