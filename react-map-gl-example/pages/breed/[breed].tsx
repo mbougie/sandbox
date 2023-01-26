@@ -1,24 +1,5 @@
-// // import React from "react";
-// import axios from "axios";
-
-// const Breed = ({ breed, images }) => {
-//   return (
-//     <div>
-//       <h1>{breed} Images</h1>
-//       <div className="collage">
-//         {images.map((image) => (
-//           <img key={image} src={image} alt={breed} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Breed;
-
 import React, { useState } from "react";
 import axios from "axios";
-// import Error from "./Error";
 
 const Breed = ({ breed }) => {
   const [images, setImages] = useState([]);
@@ -35,9 +16,6 @@ const Breed = ({ breed }) => {
       });
   }, [breed]);
 
-  // if (error) {
-  //   return <Error message={error} />;
-  // }
   return (
     <div>
       <h1>{breed} Images</h1>

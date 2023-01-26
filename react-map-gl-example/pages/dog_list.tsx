@@ -25,7 +25,7 @@ const DogList = ({ breeds }) => {
 
 export default DogList;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const res = await axios.get("https://dog.ceo/api/breeds/list/all");
   const breeds = Object.keys(res.data.message);
 

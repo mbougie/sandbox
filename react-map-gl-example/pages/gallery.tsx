@@ -1,6 +1,12 @@
 import axios from "axios";
+type Props = {
+  images: string[] | undefined;
+};
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images }: Props) => {
+  if (!images) {
+    return <div>error has occured</div>;
+  }
   return (
     <div>
       <h1>Boxer Images</h1>
