@@ -1,45 +1,19 @@
 import React from "react";
-import { useAtom } from "jotai";
-import { mapAtom, mapCursorAtom, mapDrawAtom } from "@/lib/mapStore";
+
 import PositionDisplay from "./PositionDisplay";
+import useEventHandlers, { useCount } from "./useEventHandlers";
 
 const ControlPanel = () => {
-  const [map] = useAtom(mapAtom);
-  const [mapDraw] = useAtom(mapDrawAtom);
-  const [, setMapCursor] = useAtom(mapCursorAtom);
+  /// destructuring
+  const { onMoveClick, onFlyClick } = useEventHandlers();
+  const { count, double, setCount } = useCount();
 
-  const onMoveClick = () => {
-    // Ask permission from the user to find their location
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { longitude, latitude } = position.coords;
-      map?.setCenter([longitude, latitude]);
-      map?.setZoom(10);
-    });
-  };
-  const onFlyClick = () => {
-    // Ask permission from the user to find their location
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { longitude, latitude } = position.coords;
-      map?.flyTo({
-        center: [longitude, latitude],
-        zoom: 10,
-      });
-    });
-  };
-  const onDrawClick = () => {
-    setMapCursor("crosshair");
-    mapDraw?.changeMode("draw_polygon");
-  };
-  const onLogLayers = () => {
-    console.log(map?.getStyle().layers);
-    console.log(mapDraw?.getAll());
-  };
   return (
     <div
       style={{
         position: "absolute",
         top: "10px",
-        left: "10px",
+        right: "10px",
         width: "200px",
         padding: "8px 16px",
         boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
@@ -53,6 +27,18 @@ const ControlPanel = () => {
       <PositionDisplay />
       <button onClick={onMoveClick}>Find me! {"(move)"}</button>
       <button onClick={onFlyClick}>Find me! {"(fly)"}</button>
+
+      <div>{count}</div>
+      <div>{double}</div>
+      <button
+        onClick={() => {
+          const x = count + 1;
+          setCount(x);
+        }}
+      >
+        counter
+      </button>
+
       {/* <button onClick={onDrawClick}>Draw</button>
 			<button onClick={onLogLayers}>Log Layers</button> */}
     </div>

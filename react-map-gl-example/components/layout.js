@@ -1,20 +1,10 @@
-// components/layout.js
-
-import useSWR from "swr";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Header from "./Header";
 
 export default function Layout({ children }) {
-  const { data, error } = useSWR("/api/navigation", fetcher);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
   return (
     <>
-      <Navbar links={data.links} />
+      <Header />
       <main>{children}</main>
-      <Footer />
     </>
   );
 }

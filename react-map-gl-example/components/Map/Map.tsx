@@ -1,10 +1,9 @@
 import React from "react";
-import MapGL, { ViewState } from "react-map-gl";
+import MapGL, { ViewState, Popup } from "react-map-gl";
 import { useAtom } from "jotai";
-// import DrawControl from "./DrawControl";
 import { mapAtom, mapCursorAtom } from "@/lib/mapStore";
 import "mapbox-gl/dist/mapbox-gl.css";
-import useEventHandlers, { DRAWN_LAYER_IDS } from "./useEventHandlers";
+import useEventHandlers from "./useEventHandlers";
 
 type Props = {
   initialViewState?: Partial<ViewState>;
@@ -27,17 +26,7 @@ const Map = (props: Props) => {
       mapStyle="mapbox://styles/mapbox/streets-v9"
       cursor={cursor}
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
-      interactiveLayerIds={[...DRAWN_LAYER_IDS]}
     >
-      {/* <DrawControl
-        displayControlsDefault={false}
-        onCreate={() => {
-          // reset cursor after creation
-          setMapCursor("grab");
-        }}
-        onUpdate={console.log}
-        onDelete={console.log}
-      /> */}
       {props.children}
     </MapGL>
   );

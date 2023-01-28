@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/styles.module.css";
 
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 
 const Index = () => {
   const [dogImage, setDogImage] = useState("");
