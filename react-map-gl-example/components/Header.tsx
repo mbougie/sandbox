@@ -1,18 +1,6 @@
 import Link from "next/link";
 import styles from "@/styles/Header.module.css";
 
-// const Header = () => {
-//   return (
-//     <header>
-//       <nav className={styles.topnav}>
-//         <Link href="/">
-//           <a>Home</a>
-//         </Link>
-//       </nav>
-//     </header>
-//   );
-// };
-
 function Header() {
   return (
     <div className={styles.topnav}>

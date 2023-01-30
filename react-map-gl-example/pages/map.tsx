@@ -2,7 +2,6 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Map from "@/components/Map";
 import ControlPanel from "@/components/ControlPanel";
-import RasterLayer from "@/components/Map/RasterLayer";
 import { GetStaticProps } from "next";
 import { Layer, Source } from "react-map-gl";
 
